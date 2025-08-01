@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>sAveit - Password Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video autoplay muted loop id="bgVideo">
+    <source src="background.mp4" type="video/mp4" />
+  </video>
+
+  <div class="wrapper">
+    <div class="generator-box">
+      <h1 class="project-title">sAveit</h1>
+      <p class="credit-line">by Abhinav Kumar</p>
+
+      <h2>Generate Password</h2>
+      <label>Password Length:
+        <input type="number" id="length" min="4" max="30" value="12" />
+      </label>
+      <label><input type="checkbox" id="uppercase" checked /> Uppercase</label>
+      <label><input type="checkbox" id="lowercase" checked /> Lowercase</label>
+      <label><input type="checkbox" id="numbers" checked /> Numbers</label>
+      <label><input type="checkbox" id="symbols" checked /> Symbols</label>
+
+      <button onclick="generatePassword()">Generate</button>
+      <input type="text" id="passwordDisplay" readonly />
+      <button onclick="copyToClipboard()">📋 Copy</button>
+
+      <input type="text" id="label" placeholder="Label (e.g. Gmail)" />
+      <button onclick="savePassword()">💾 Save</button>
+    </div>
+
+    <div class="dashboard-box">
+      <h2>💾 Saved Passwords</h2>
+      <ul id="savedList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
